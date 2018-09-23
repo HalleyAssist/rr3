@@ -9,11 +9,11 @@ void init_tree();
 // def initialize(size)
 static VALUE rb_tree_initialize(VALUE self, VALUE size);
 // def insert_path(path, data = nil)
-static VALUE rb_tree_insert_path(int argc, VALUE *argv, VALUE self);
+static VALUE rb_tree_insert(VALUE self, VALUE methods, VALUE path, VALUE data);
 // def compile()
 static VALUE rb_tree_compile(VALUE self);
 // def compile(path)
-static VALUE rb_tree_match(VALUE self, VALUE path);
+static VALUE rb_tree_match(VALUE self, VALUE methods, VALUE path);
 // def dump(level)
 static VALUE rb_tree_dump(VALUE self, VALUE level);
 
