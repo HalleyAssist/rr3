@@ -1,4 +1,3 @@
-#define HAVE_STRNDUP
 #include "rr3.h"
 #include "tree.h"
 #include "match_entry.h"
