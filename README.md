@@ -19,11 +19,11 @@ The PPA for libr3 can be found in https://launchpad.net/~r3-team/+archive/libr3-
 ```ruby
 require 'rr3'
 @tree = Rr3::Tree.new(10)
-@tree.insert_path "/bar"
-@tree.insert_path "/zoo", 9527
-@tree.insert_path "/foo/bar", 9527
-@tree.insert_path "/post/{id}", 9527
-@tree.insert_path "/user/{id:\\d+}", 9527
+@tree.insert "/bar"
+@tree.insert "/zoo", 9527
+@tree.insert "/foo/bar", 9527
+@tree.insert "/post/{id}", 9527
+@tree.insert "/user/{id:\\d+}", 9527
 @tree.compile!
 @tree.match "/user/xxx"  # => false # not matched
 @tree.match "/asd"       # => false

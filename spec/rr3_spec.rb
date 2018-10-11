@@ -3,12 +3,12 @@ require 'spec_helper'
 describe Rr3 do
   before(:all)do
     @tree = Rr3::Tree.new(10)
-    @tree.insert_path 1, "/bar"
-    @tree.insert_path 1, "/zoo", 3
-    @tree.insert_path 1, "/foo/bar", 1
-    @tree.insert_path 1, "/post/{id}", 2
+    @tree.insert 1, "/bar"
+    @tree.insert 1, "/zoo", 3
+    @tree.insert 1, "/foo/bar", 1
+    @tree.insert 1, "/post/{id}", 2
     class A; attr_accessor :bar; end;
-    @tree.insert_path 1, "/user/{id:\\d+}", A.new.tap{|a| a.bar = 1}
+    @tree.insert 1, "/user/{id:\\d+}", A.new.tap{|a| a.bar = 1}
     @tree.compile!
   end
 
