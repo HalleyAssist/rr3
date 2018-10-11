@@ -18,7 +18,7 @@ describe Rr3 do
     expect(@tree.match(1, "/post/1234")["slugs"][0]).to eql "1234"
     expect(@tree.match(1, "/user/1234")["slugs"][0]).to eql "1234"
     expect(@tree.match(1, "/user/xxx")).to eql false
-    expect(@tree.match(1, "/asd")["data"]).to eql false
+    expect(@tree.match(1, "/asd")).to eql false
   end
 
   it 'dumps' do
