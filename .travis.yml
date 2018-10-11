@@ -5,3 +5,4 @@ rvm:
 
 install:
    - bundle install --retry=3
+   - rake compile
