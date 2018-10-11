@@ -3,6 +3,11 @@ rvm:
   - 2.5
   - 2.6.0-preview2
 
+addons:
+  apt:
+    packages:
+    - libr3-dev
+
 install:
-   - bundle install --retry=3
-   - rake compile
+  - bundle install --retry=3
+  - rake compile
