@@ -12,13 +12,13 @@ describe Rr3 do
   end
 
   it 'matches' do
-    expect(@tree.match(1, "/bar").data).to eql 4
-    expect(@tree.match(1, "/zoo").data).to eql 3
-    expect(@tree.match(1, "/foo/bar").data).to eql 1
-    expect(@tree.match(1, "/post/1234").slugs[0]).to eql "1234"
-    expect(@tree.match(1, "/user/1234").slugs[0]).to eql "1234"
+    expect(@tree.match(1, "/bar")["data"]).to eql 4
+    expect(@tree.match(1, "/zoo")["data"]).to eql 3
+    expect(@tree.match(1, "/foo/bar")["data"]).to eql 1
+    expect(@tree.match(1, "/post/1234")["slugs"][0]).to eql "1234"
+    expect(@tree.match(1, "/user/1234")["slugs"][0]).to eql "1234"
     expect(@tree.match(1, "/user/xxx")).to eql false
-    expect(@tree.match(1, "/asd").data).to eql false
+    expect(@tree.match(1, "/asd")["data"]).to eql false
   end
 
   it 'dumps' do
