@@ -5,6 +5,8 @@ rvm:
 
 addons:
   apt:
+    sources:
+    - sourceline: 'ppa:r3-team/libr3-daily'
     packages:
     - libr3-dev
 
