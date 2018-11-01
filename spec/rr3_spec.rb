@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Rr3 do
   before(:all)do
     @tree = Rr3::Tree.new(10)
+    @tree.insert 1, "/", -1
     @tree.insert 1, "/bar", 4
     @tree.insert 1, "/zoo", 3
     @tree.insert 1, "/foo/bar", 1
@@ -12,6 +13,7 @@ describe Rr3 do
   end
 
   it 'matches' do
+    expect(@tree.match(1, "/")["data"]).to eql -1
     expect(@tree.match(1, "/bar")["data"]).to eql 4
     expect(@tree.match(1, "/zoo")["data"]).to eql 3
     expect(@tree.match(1, "/foo/bar")["data"]).to eql 1
